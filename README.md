@@ -1,3 +1,6 @@
-This is a whitepaper for a liquid DAO concept. In this repository, you will find the full text of it. Here it is:
+**This is a whitepaper for a liquid DAO concept. In this repo you can find the full text of it. Here it is - [whitepaper.md](https://github.com/no-hive/liquid_dao_whitepaper/blob/main/whipepapper.md).**
 
-Additionally, a more user-friendly web interface for browsing it may be available in the near future.
+*Additionally, if you would like to contribute to this concept, you are welcome to fork the repository and make any changes you wish. The whitepaper.md file is distributed under the MIT License, as are any other files that may be added here in the future.*
+
+<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/35721602-aa3c-4771-8177-6524c1fb823f" />
+
