@@ -1,5 +1,7 @@
 ## EXAMPLE
 
+### The introduction. 
+
 Here you can find the very-very detailed step-by-step example how such a system can look like in some abstract EVM network ecosystem. Do not consider it as a plan or architecture proposal, consider it as a dreamful example with some references to liquid_dao_whiteppaper. 
 
 ### Liquidity-based DAOs for DEX. 
@@ -11,6 +13,7 @@ The network core DeFi protocol is always DEX. Let’s imagine a DEX with four to
 Also the DEX is a DAO itself. And here liquidity DAO core mechanic plays a role. DEX DAO inherites the governing power from all four pool DAOs. It means that if you contribute liquidity to a pool, you also receive governance power in the DEX DAO, allowing you to vote on fees, smart contract upgrades, grant programs, and other key decisions. 
 
 ----
+
 <img width="1413" height="583" alt="image" src="https://github.com/user-attachments/assets/dd543a86-8d83-4c0f-ab40-7f07432e3150" />
 
 ----
@@ -74,9 +77,11 @@ The Chain DAO can grant voting power to users who actively participate in these 
 
 Also you might notice **connection 10**. Here I want to illustrate that there is no strict hierarchy system in liquid DAOs, so as well as chain can enherit voting power from its DeFi protocols, other DAOs can do it as well, even smallest one - like Pool DAO in this example. 
 
-### The public goods DAO.
+### The public goods DAOs.
 
 Let's make our ecosystem even broader. As the chain grows, a new wave of public goods protocols emerges. Not all of them neccessarly are the part of DAO landscape from the very beginning. A Quadratic Crowdfunding Protocol is the first and by now is the only one to support Liquid DAO mechanism. 
+
+*Sorry, I had to move the initial blocks on the scheme to fit the new ones:*
 
 ----
 
@@ -86,9 +91,9 @@ Let's make our ecosystem even broader. As the chain grows, a new wave of public 
 
 **Connection 12** stops you from participating in funding public goods unless you actively participate in the chain’s DeFi ecosystem. Whether this is a good solution is debatable - but the protocol has the right to define and change its own rules.
 
-Next comes the Public Goods Engine — a concept for distributing additional donations to public goods projects. But who decides where the money goes? The idea is to let those already engaged in the ecosystem make that decision.
+Next comes the Public Goods Engine — a concept for distributing additional donations to public goods projects. But who decides where the money goes? The idea is to let those already engaged in the ecosystem public goods make that decision (**connections 13, 14, 15**).
 
-Recognizing this trend, the Chain DAO integrates the Public Goods Engine as a vital ecosystem project. As a result, all public goods participants gain voting power within the Chain DAO.
+Recognizing this trend, the Chain DAO integrates the Public Goods Engine as a vital ecosystem project. As a result, all public goods participants gain voting power within the Chain DAO - **connection 16** stands for it.
 
 ----
 
@@ -102,15 +107,17 @@ Is this the final level of the system?
 
 Not quite.
 
-Using bridges, a new L2 chain could decide to inherit voting power from the Chain DAO, as well as from a token pool it actively promotes. This becomes a strategy for attracting users: offering small benefits to all active participants, and larger voting power bonuses to carefully selected partners.
-
 ----
 
 <img width="1413" height="806" alt="image" src="https://github.com/user-attachments/assets/101a0940-d0d2-4dcf-a1cd-64fd9677d7df" />
 
 ----
 
-### The main risk.
+Using bridges, an other less popular L2 chain decides to inherit voting power from the Chain DAO (**connection 17**), as well as from a token pool which L2 chain wrapped token (**connection 18**).
+
+DAOs become a tool to attract people into new ecosystems or the old ecosystem new parts. And as a result, on-chain governing grows overall.
+
+### The conclusion
 
 The final question is the cost of gas. Will all these voting power transfers be cheap enough to justify integration?
 
