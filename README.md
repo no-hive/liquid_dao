@@ -1,4 +1,4 @@
-**This repository contains a whitepaper for a Liquid DAO concept — [whitepaper.md](https://github.com/no-hive/liquid_dao_whitepaper/blob/main/whipepapper.md).**
+**This repository contains a whitepaper for a Liquid DAO concept — [whitepaper.md](https://github.com/no-hive/liquid_dao_whitepaper/blob/main/whitepapper.md).**
 
 **It presents an idea for redesigning DAOs to make them more flexible, useful, and sound.**
 
