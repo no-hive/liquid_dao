@@ -1,4 +1,4 @@
-**This repo contains a litepaper for a Liquid DAO concept ([litepaper.md](https://github.com/no-hive/liquid_dao/blob/main/litepaper.md)) and the example of how it could work ([example.md](https://github.com/no-hive/liquid_dao/blob/main/example.md)).**
+**This repo contains a litepaper for a Liquid DAO concept ([litepaper.md](https://github.com/no-hive/liquid_dao/blob/main/litepaper.md)) and the example of how it could work ([example.light_theme.md](https://github.com/no-hive/liquid_dao/blob/main/example.md) / [example.dark_theme.md](https://github.com/no-hive/liquid_dao/blob/main/example.dark_theme.md)).**
 
 **It presents an idea for redesigning DAOs to make them more flexible, useful, and sound, implementing a universal system of voting power inheritance between DAOs.**
 
