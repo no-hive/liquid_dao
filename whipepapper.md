@@ -4,7 +4,10 @@ Now that we are familiar with the theory, let me present the landscape we can bu
 
 Let’s imagine a DEX with four token pools. Each pool is a small local DAO. They decide on such questions as liquidity cap, liquidity insurances, pool commissions. The DEX is a DAO itself. It inherites the governing power from pool DAOs. It means that if you contribute liquidity to a pool, you also receive governance power in the DEX DAO, allowing you to vote on fees, smart contract upgrades, grant programs, and other key decisions. This concept — governance power derived from DEX activity - could already be implemented today on Uniswap v4 using hooks.
 
-<img width="1422" height="590" alt="image" src="https://github.com/user-attachments/assets/73770671-116f-4dc7-a3cb-7a51c6e14373" />
+----
+<img width="1413" height="583" alt="image" src="https://github.com/user-attachments/assets/dd543a86-8d83-4c0f-ab40-7f07432e3150" />
+
+----
 
 Connections 1, 2, 3, and 4 represent the transfer of voting power from the pools to the DEX. It is important to note that these connections are governed by the DEX not by pool DAOs: if the community decides, it can vote to exclude certain pools from the system. For example, if a pool becomes malicious, the DEX community (i.e., the other pools) can vote to remove it.
 
@@ -12,11 +15,19 @@ As a result we have a system where smaller communities have independent power on
 
 Now let’s introduce a launchpad. Its governance token derives voting power from any tokens launched on it. Tokens C and P were launched there — the launchpad listens to them and receives voting power from them. By holding or swapping the launchpad’s native token, you gain voting power over its future changes.
 
-<img width="1422" height="622" alt="image" src="https://github.com/user-attachments/assets/cb89ae6e-f672-4a89-997b-b60ab071f924" />
+----
+
+<img width="1413" height="615" alt="image" src="https://github.com/user-attachments/assets/ca12e875-5c2d-4f41-827c-aaf9e762b5bd" />
+
+----
 
 Next, we have the Chain DAO - the highest-level governing entity that defines the future of a particular L2 solution. It is this very decentrilized entiity that controls the main vector of the chain.
 
-<img width="1422" height="711" alt="image" src="https://github.com/user-attachments/assets/0a412394-8a9f-4cf6-8dc7-341ee89b1209" />
+----
+
+<img width="1413" height="704" alt="image" src="https://github.com/user-attachments/assets/7962ca95-c6ce-4ca4-abcb-c868d3aaaf17" />
+
+----
 
 In our case, such a DAO is designed to import voting power from the most vital projects in its ecosystem. 
 
@@ -30,19 +41,31 @@ The risk here is the infinite loop of power inheritance, which is solved by limi
 
 Now let’s expand to broader ecosystem add-ons. Imagine there are non-DAO protocols that significantly shape the chain’s DeFi landscape.
 
-<img width="1423" height="705" alt="image" src="https://github.com/user-attachments/assets/1152738c-288c-4189-a364-998e7e226227" />
+----
+
+<img width="1413" height="697" alt="image" src="https://github.com/user-attachments/assets/ae6fa430-fd96-430c-94c1-93ccac1479d8" />
+
+----
 
 The Chain DAO can grant voting power to users who actively participate in these DeFi protocols.
 
 As the DAO grows, a new wave of public goods protocols emerges. A Quadratic Crowdfunding Protocol is among the first to support Liquid DAOs: you can vote for projects only if you actively participate in the chain’s DeFi ecosystem. Whether this is a good solution is debatable — but the protocol has the right to define and change its own rules.
 
-<img width="1422" height="814" alt="image" src="https://github.com/user-attachments/assets/3f3112d5-3909-47d2-869f-7b0aa08ca0fc" />
+----
+
+<img width="1413" height="806" alt="image" src="https://github.com/user-attachments/assets/2003ae4c-db50-4692-b1c5-b80097955381" />
+
+----
 
 Next comes the Public Goods Engine — a concept for distributing additional donations to public goods projects. But who decides where the money goes? The idea is to let those already engaged in the ecosystem make that decision.
 
 Recognizing this trend, the Chain DAO integrates the Public Goods Engine as a vital ecosystem project. As a result, all public goods participants gain voting power within the Chain DAO.
 
-<img width="1422" height="814" alt="image" src="https://github.com/user-attachments/assets/fadf7333-5d63-495b-9d38-ec2f29c1d625" />
+----
+
+<img width="1413" height="806" alt="image" src="https://github.com/user-attachments/assets/50e0a1ca-1dda-43f4-96a7-2aed9794c6e8" />
+
+----
 
 Is this the final level of the system?
 
@@ -50,7 +73,11 @@ Not quite.
 
 Using bridges, a new L2 chain could decide to inherit voting power from the Chain DAO, as well as from a token pool it actively promotes. This becomes a strategy for attracting users: offering small benefits to all active participants, and larger voting power bonuses to carefully selected partners.
 
-<img width="1422" height="814" alt="image" src="https://github.com/user-attachments/assets/563407d5-78cd-44c2-b2d6-61660daef8d1" />
+----
+
+<img width="1413" height="806" alt="image" src="https://github.com/user-attachments/assets/101a0940-d0d2-4dcf-a1cd-64fd9677d7df" />
+
+----
 
 The final question is the cost of gas. Will all these voting power transfers be cheap enough to justify integration?
 
