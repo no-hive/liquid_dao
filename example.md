@@ -1,5 +1,7 @@
 ## EXAMPLE
 
+Here you can find the very-very detailed step-by-step example how such a system can look like in some abstract EVM network ecosystem. 
+
 ### Liquidity-based DAOs for DEX. 
 
 Now that we are familiar with the theory, let me present the landscape we can build using tsome tools I described, as well as some tools that already are the part of the industry. 
