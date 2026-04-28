@@ -1,6 +1,6 @@
 ## EXAMPLE
 
-Here you can find the very-very detailed step-by-step example how such a system can look like in some abstract EVM network ecosystem. 
+Here you can find the very-very detailed step-by-step example how such a system can look like in some abstract EVM network ecosystem. Do not consider it as a plan or architecture proposal, consider it as a dreamful example with some references to liquid_dao_whiteppaper. 
 
 ### Liquidity-based DAOs for DEX. 
 
