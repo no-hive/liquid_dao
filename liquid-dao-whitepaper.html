@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A decentralized autonomous organization framework for the future.">
+  <title>DAO Whitepaper</title>
+  <script>
+    // Apply saved theme before first paint (no flash)
+    try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark'); } catch (e) {}
+  </script>
+  <style>
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+  --placeholder: #f0f0f0;
+  --menu-bg: #ffffff;
+  --menu-border: #d8d8d8;
+  --backdrop: rgba(0, 0, 0, 0.3);
+}
+
+html.dark {
+  --bg: #000000;
+  --fg: #c0c0c0;
+  --placeholder: #1a1a1a;
+  --menu-bg: #000000;
+  --menu-border: #2e2e2e;
+  --backdrop: rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button { font-family: inherit; color: inherit; }
+:focus-visible { outline: 1px dashed currentColor; outline-offset: 4px; }
+
+/* 27.5% | 45% | 27.5% */
+.page {
+  width: 45%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  padding: 4rem 0;
+}
+
+.stack-12 > * + * { margin-top: 3rem; }
+.stack-4 > * + * { margin-top: 1rem; }
+
+section, header { scroll-margin-top: 4rem; }
+
+h1 { font-size: 3rem; line-height: 1.1; margin: 0; font-weight: 700; }
+h2 { font-size: 1.875rem; line-height: 1.25; margin: 0; font-weight: 700; }
+.subtitle { font-size: 1.25rem; margin: 1rem 0 0; }
+p { font-size: 1.125rem; line-height: 1.75; margin: 0; }
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--placeholder);
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+footer { font-size: 0.875rem; padding-top: 1rem; }
+
+/* Fixed controls */
+.fixed-btn {
+  position: fixed;
+  top: 25px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.fixed-btn:hover { opacity: 1; }
+.theme-toggle { right: 25px; font-size: 1.25rem; z-index: 50; }
+.menu-toggle { left: 25px; font-size: 1.75rem; z-index: 70; }
+
+/* Slide-out menu */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--backdrop);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 55;
+}
+.menu-backdrop.open { opacity: 1; pointer-events: auto; }
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 85vw;
+  padding: 5rem 25px 2rem;
+  background: var(--menu-bg);
+  border-right: 1px solid var(--menu-border);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 60;
+  overflow-y: auto;
+}
+.menu-panel.open { transform: translateX(0); }
+.menu-panel a {
+  display: block;
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.menu-panel a:hover { opacity: 1; }
+
+@media (max-width: 1024px) {
+  .page { width: 84%; margin-left: 8%; margin-right: 8%; }
+}
+@media (max-width: 640px) {
+  .page { width: 88%; margin-left: 6%; margin-right: 6%; padding: 4rem 0 3rem; }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.5rem; }
+  p { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+  </style>
+</head>
+<body>
+  <button type="button" id="menu-toggle" class="fixed-btn menu-toggle" aria-label="Open menu" aria-expanded="false">≡</button>
+  <button type="button" id="theme-toggle" class="fixed-btn theme-toggle" aria-label="Switch to dark mode">●</button>
+
+  <div id="menu-backdrop" class="menu-backdrop" aria-hidden="true"></div>
+  <nav id="menu-panel" class="menu-panel" aria-label="Sections" aria-hidden="true">
+    <a href="#overview" data-target="overview" tabindex="-1">Overview</a>
+    <a href="#introduction" data-target="introduction" tabindex="-1">Introduction</a>
+    <a href="#architecture" data-target="architecture" tabindex="-1">Architecture</a>
+    <a href="#governance" data-target="governance" tabindex="-1">Governance</a>
+    <a href="#tokenomics" data-target="tokenomics" tabindex="-1">Tokenomics</a>
+    <a href="#security" data-target="security" tabindex="-1">Security</a>
+    <a href="#roadmap" data-target="roadmap" tabindex="-1">Roadmap</a>
+    <a href="#community" data-target="community" tabindex="-1">Community</a>
+    <a href="#conclusion" data-target="conclusion" tabindex="-1">Conclusion</a>
+  </nav>
+
+  <main class="page stack-12">
+    <header id="overview">
+      <h1>DAO Whitepaper</h1>
+      <p class="subtitle">A decentralized autonomous organization framework for the future.</p>
+    </header>
+
+    <section id="introduction" class="stack-4">
+      <h2>Introduction</h2>
+      <p>Traditional organizations concentrate authority in a small group of executives and trustees. Decisions travel up a hierarchy, records live in private ledgers, and members must trust that rules are applied as written.</p>
+      <p>A decentralized autonomous organization replaces that trust with code. Rules are encoded in smart contracts on a public blockchain, where every member can read them, and every action is recorded in a shared, tamper-resistant history.</p>
+      <p>This paper describes a framework for building such an organization: how it is structured, how it decides, how value flows through it, and how it stays safe while it grows.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 1">Image Placeholder 1</div>
+    <section id="architecture" class="stack-4">
+      <h2>Architecture</h2>
+      <p>The system is built from three layers with clear boundaries. The governance layer collects proposals and votes. The execution layer carries out approved decisions. The treasury layer holds the organization’s assets.</p>
+      <p>Each layer talks to the next through narrow, audited interfaces. Governance can instruct execution, but only execution can request funds, and the treasury releases funds only against a verified, approved proposal.</p>
+      <p>This separation limits the damage of any single failure. A flaw in a voting contract cannot drain the treasury directly, and a compromised executor cannot invent approvals.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 2">Image Placeholder 2</div>
+    <section id="governance" class="stack-4">
+      <h2>Governance</h2>
+      <p>Voting uses a quadratic rule: the cost of each additional vote on one proposal grows with the square of the votes cast. Large holders still count for more, but their advantage shrinks, and members with smaller stakes can express strong preferences.</p>
+      <p>Proposals come in three types. Parameter changes adjust settings such as quorum or voting periods. Spending proposals release treasury funds. Constitutional proposals amend the core rules and require a higher threshold and a longer delay.</p>
+      <p>Safeguards include a time lock between approval and execution, a veto window for a security council on emergencies only, and minimum deposits that discourage spam.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 3">Image Placeholder 3</div>
+    <section id="tokenomics" class="stack-4">
+      <h2>Tokenomics</h2>
+      <p>The total supply is fixed at 1,000,000,000 tokens. Forty percent goes to the community, including rewards and grants. Twenty-five percent goes to the treasury, twenty percent to contributors, and fifteen percent to early supporters.</p>
+      <p>Contributor and early supporter allocations vest over four years, with a one-year cliff. Nothing unlocks during the first twelve months, and the remainder releases monthly, which aligns long-term incentives with the health of the organization.</p>
+      <p>Members may stake tokens to gain voting power and a share of protocol fees. Staked tokens are locked for a chosen period, and longer locks carry proportionally more weight.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 4">Image Placeholder 4</div>
+    <section id="security" class="stack-4">
+      <h2>Security</h2>
+      <p>Every contract is reviewed by at least two independent auditing firms before deployment, and the reports are published in full. Any change to audited code triggers a new review.</p>
+      <p>Treasury assets sit behind multi-signature wallets that require approval from several independent key holders, spread across different jurisdictions and hardware devices.</p>
+      <p>A standing bug bounty pays researchers in proportion to the severity of what they report. We would rather pay for a disclosure than learn of a flaw from an attacker.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 5">Image Placeholder 5</div>
+    <section id="roadmap" class="stack-4">
+      <h2>Roadmap</h2>
+      <p>Phase one, Foundation, delivers the core contracts, the audits, and a test network where early members can practice proposing and voting.</p>
+      <p>Phase two, Launch, opens the mainnet, distributes the initial tokens, and activates the treasury with a first round of community grants.</p>
+      <p>Phase three, Expansion, hands remaining administrative powers to token holders, adds cross-chain support, and funds independent teams building on the framework.</p>
+    </section>
+    <div class="aspect-video" role="img" aria-label="Image Placeholder 6">Image Placeholder 6</div>
+    <section id="community" class="stack-4">
+      <h2>Community</h2>
+      <p>Work is organized into open working groups covering development, research, operations, and outreach. Anyone can join a group, propose a project, and request funding for it.</p>
+      <p>Transparency is the default. Treasury balances, votes, and meeting notes are public, and each working group publishes regular reports on what it shipped and what it spent.</p>
+      <p>Participation is rewarded. Contributors earn grants and reputation for their work, and newcomers are supported with documentation, mentors, and small starter tasks.</p>
+    </section>
+    <section id="conclusion" class="stack-4">
+      <h2>Conclusion</h2>
+      <p>DAOs will not replace every institution, but they offer a credible way to coordinate people who share a goal and do not share an employer. Open rules and shared ownership make collective decisions easier to inspect and harder to capture.</p>
+      <p>This framework is a starting point, and it will improve through use. We invite developers, researchers, and curious readers to read the code, challenge the design, and join the organization.</p>
+    </section>
+
+    <footer>Published 2024. Licensed under Creative Commons.</footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+
+      // Theme
+      var themeBtn = document.getElementById('theme-toggle');
+      function renderTheme() {
+        var dark = root.classList.contains('dark');
+        themeBtn.textContent = dark ? '○' : '●';
+        themeBtn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+      themeBtn.addEventListener('click', function () {
+        var dark = root.classList.toggle('dark');
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+        renderTheme();
+      });
+      renderTheme();
+
+      // Menu
+      var menuBtn = document.getElementById('menu-toggle');
+      var panel = document.getElementById('menu-panel');
+      var backdrop = document.getElementById('menu-backdrop');
+      var links = panel.querySelectorAll('a');
+      function setMenu(open) {
+        panel.classList.toggle('open', open);
+        backdrop.classList.toggle('open', open);
+        panel.setAttribute('aria-hidden', String(!open));
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menuBtn.textContent = open ? '×' : '≡';
+        links.forEach(function (a) { a.tabIndex = open ? 0 : -1; });
+      }
+      menuBtn.addEventListener('click', function () { setMenu(!panel.classList.contains('open')); });
+      backdrop.addEventListener('click', function () { setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+      links.forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          setMenu(false);
+          var el = document.getElementById(a.dataset.target);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
