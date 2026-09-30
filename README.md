@@ -1,6 +1,8 @@
-**This repo contains a litepaper for a Liquid DAO concept ([litepaper.md](https://github.com/no-hive/liquid_dao/blob/main/litepaper.md)).** **It presents an idea for redesigning governing protocols to make them more flexible, useful, and sound, implementing a universal system of voting power inheritance.**
+**This repo contains a whitepaper for a Liquid DAO concept.**
 
-**Also there is a detailed example of how it could work ([example.light_theme.md](https://github.com/no-hive/liquid_dao/blob/main/example.md) / [example.dark_theme.md](https://github.com/no-hive/liquid_dao/blob/main/example.dark_theme.md)).**
+It's available as a [website]() or as an md files of two types - [whitepaper_light_theme.md]() / [whitepaper_dark_theme.md]().
+
+**Any format will tell your about the idea how to make governing protocols more flexible, useful, and sound, implementing a universal system of voting power inheritance.**
 
 *Additionally, if you would like to contribute to this concept, you are welcome to fork the repository and make any changes you wish. This litepaper is distributed under the MIT License, as are any other files that may be added here in the future.*
 
